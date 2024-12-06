@@ -1,0 +1,166 @@
+/* Theme principal pour Escape Arcadia */
+:root {
+    --primary-color: #ff6b00;
+    --primary-hover: #ff8533;
+    --dark-bg: #1a1a1a;
+    --card-bg: #2a2a2a;
+    --text-light: #fff;
+    --text-gray: #ccc;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navigation */
+.navbar {
+    background-color: rgba(26, 26, 26, 0.95) !important;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.navbar-brand {
+    color: var(--primary-color) !important;
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    color: var(--text-light) !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Cards */
+.custom-card {
+    background: linear-gradient(145deg, var(--card-bg), var(--dark-bg));
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    color: var(--text-light);
+}
+
+.custom-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 107, 0, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
+
+.custom-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(255, 107, 0, 0.3);
+}
+
+.custom-card:hover::before {
+    animation: shine 1.5s ease;
+}
+
+@keyframes shine {
+    from { left: -50%; }
+    to { left: 150%; }
+}
+
+/* Buttons */
+.btn-escape {
+    background: linear-gradient(45deg, var(--primary-color), var(--primary-hover));
+    border: none;
+    color: var(--text-light);
+    padding: 12px 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-escape:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 107, 0, 0.5);
+    color: var(--text-light);
+}
+
+/* Forms */
+.form-control {
+    background-color: var(--card-bg);
+    border: 1px solid #333;
+    color: var(--text-light);
+}
+
+.form-control:focus {
+    background-color: var(--card-bg);
+    border-color: var(--primary-color);
+    color: var(--text-light);
+    box-shadow: 0 0 0 0.25rem rgba(255, 107, 0, 0.25);
+}
+
+/* Tables */
+.table {
+    color: var(--text-light);
+}
+
+.table thead {
+    background-color: var(--card-bg);
+    border-color: var(--primary-color);
+}
+
+.table tbody tr {
+    background-color: rgba(42, 42, 42, 0.5);
+}
+
+.table tbody tr:hover {
+    background-color: rgba(255, 107, 0, 0.1);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+    color: var(--primary-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Page Headers */
+.page-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1551522435-a13afa10f103?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    margin-bottom: 50px;
+    position: relative;
+    text-align: center;
+}
+
+.page-header h1 {
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-bg);
+    border-top: 1px solid var(--primary-color);
+    color: var(--text-light);
+    padding: 30px 0;
+    margin-top: 50px;
+}
